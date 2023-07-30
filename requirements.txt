@@ -4,3 +4,4 @@ matplotlib
 scikit-learn
 keras
 pandas-datareader
+tensorflow
