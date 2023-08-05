@@ -10,7 +10,7 @@ scaler = MinMaxScaler(feature_range=(0,1))
 class Model:
     def __init__(self, x_shape):
         self.x_shape = x_shape
-        self.model = load_model('./src/model_weights.keras')
+        self.model = load_model('./model_weights.keras')
         
     def prediction(self, x_data):
         size = len(x_data)
@@ -31,7 +31,7 @@ class Model:
         return predictions
     
 model = Model(60)
-df = pd.read_csv('./stocks/AMZN.csv')
+df = pd.read_csv('../stocks/AMZN.csv')
 data = df.filter(['Close'])
 dataset = data.values
 predictions = model.extrapolate(dataset, 10)
